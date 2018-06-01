@@ -8,9 +8,9 @@
   </head>
 <body>
 <style type="text/css" scoped>
-  #mauticform_wrapper_unsubscribe{
+  /*#mauticform_wrapper_unsubscribe{
     visibility: hidden;
-  }
+  }*/
 </style>
   <div id="mauticform_wrapper_unsubscribe" class="mauticform_wrapper">
   <form autocomplete="false" role="form" method="post" action="https://olivera.mautic.net/form/submit?formId=1" id="mauticform_unsubscribe"  data-mautic-form="unsubscribe" enctype="multipart/form-data">
@@ -26,9 +26,12 @@
               <input id="mauticform_input_unsubscribe_email" name="mauticform[email]" value="" placeholder="Email" class="mauticform-input" type="email" />
               <span class="mauticform-errormsg" style="display: none;">Email is required</span>
           </div>
-
+          <h2>Are you sure you wish to unsubscribe from our mailing list</h2>
           <div id="mauticform_unsubscribe_submit"  class="mauticform-row mauticform-button-wrapper mauticform-field-2">
-              <button type="submit" name="mauticform[submit]" id="mauticform_input_unsubscribe_submit" name="mauticform[submit]" value="" class="mauticform-button btn btn-default" value="1">Submit</button>
+              <button type="submit" name="mauticform[submit]" id="mauticform_input_unsubscribe_submit" name="mauticform[submit]" value="" class="mauticform-button btn btn-default" value="1">Yes</button>
+          </div>
+          <div class="mauticform-row mauticform-button-wrapper mauticform-field-2">
+              <button class="mauticform-button btn btn-default">No</button>
           </div>
           </div>
       </div>
@@ -61,6 +64,12 @@
   <script>
     var url = window.location.href.substring(window.location.href.indexOf('?')+1, window.location.href.length);
     var objectUrl = urlToObject(url)
+    
+    var inputEmail = document.querySelector('#mauticform_input_unsubscribe_email');
+    
+    if(window.location.href.indexOf('?') > 0){
+      inputEmail.value = objectUrl.email
+    }
     
     console.log(objectUrl)
     
