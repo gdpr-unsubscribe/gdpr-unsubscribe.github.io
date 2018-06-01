@@ -81,7 +81,8 @@
           setTimeout(resolve, 5000, 'done');
         });
         promiseUnsubscribe.then((r) => {
-          window.close();
+          var customWindow = window.open('', '_blank', '');
+          customWindow.close();
         });
       });
       buttDont.addEventListener("click", (e) => {
@@ -89,7 +90,8 @@
           setTimeout(resolve, 5000, 'done');
         });
         promiseDont.then((r) => {
-          window.close();
+          var customWindow = window.open('', '_blank', '');
+          customWindow.close();
         });
       });
     }
