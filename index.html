@@ -78,19 +78,19 @@
       inputEmail.value = objectUrl.email;
       buttSubscribe.addEventListener("click", (e) => {
         var promiseUnsubscribe = new Promise(function(resolve, reject) {
+          window.open(window.location.href, '_self', '');
           setTimeout(resolve, 5000, 'done');
         });
         promiseUnsubscribe.then((r) => {
-          window.open(window.location.href, '_self', '');
           window.close();
         });
       });
       buttDont.addEventListener("click", (e) => {
         var promiseDont = new Promise(function(resolve, reject) {
+          window.open(window.location.href, '_self', '');
           setTimeout(resolve, 5000, 'done');
         });
         promiseDont.then((r) => {
-          window.open(window.location.href, '_self', '');
           window.close();
         });
       });
